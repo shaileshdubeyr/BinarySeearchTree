@@ -17,10 +17,8 @@ public class MyBinaryTree<K extends Comparable<K>> {
 
 		if (compareResult < 0) {
 			current.left = addRecursively(current.left, key);
-			System.out.println("the root is "+root);
 		} else {
 			current.right = addRecursively(current.right, key);
-			System.out.println("the root is "+root);
 		}
 		return current;
 	}

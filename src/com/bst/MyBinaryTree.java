@@ -26,27 +26,26 @@ public class MyBinaryTree<K extends Comparable<K>> {
 	 public int getSize() {
 		return getSizeRecursively(root);
 	}
-	 public  MyBinaryNode<K> searchRecursive(K key) {
-			MyBinaryNode<K> currentNode = this.root;
-			while (currentNode != null &&currentNode!=key) {
-				if ( key.compareTo(currentNode.key)<0) {
-					currentNode = currentNode.left;
-					return currentNode;
-				}
-				
-				else {
+	
+ 	public  MyBinaryNode<K> searchRecursive(K key) {
+		MyBinaryNode<K> currentNode = this.root;
+		while (currentNode != null &&currentNode!=key) {
+			if ( key.compareTo(currentNode.key)<0) {
+				currentNode = currentNode.left;
+				return currentNode;
+			}else {
 				currentNode = currentNode.right;
-			   }
 			}
-			return currentNode;
 		}
+		return currentNode;
+	}
 		
-		public boolean search( K key) {
-			MyBinaryNode<K> currentNode = this.searchRecursive(key);
-			if(currentNode!= null)
-				return true;
-			return false;
-		}
+	public boolean search( K key) {
+		MyBinaryNode<K> currentNode = this.searchRecursive(key);
+		if(currentNode!= null)
+			return true;
+		return false;
+	}
 	 
 	public int getSizeRecursively(MyBinaryNode<K> current) {
 		return current == null ? 0 : 1 + getSizeRecursively(current.left) + getSizeRecursively(current.right);

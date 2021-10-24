@@ -1,12 +1,11 @@
 package com.bst;
 
-import org.junit.jupiter.api.Test;
-
 import org.junit.Assert;
+import org.junit.Test;
 
 public class MyBinaryTreeTest {
 	@Test
-	public void givenThreeNumberWhenAddedToBSTshouldResultSize3() {
+	public void givenMultipleNumbersshouldReturnTrueIfkeyMatch() {
 		MyBinaryTree<Integer> myBinaryTree = new MyBinaryTree<>();
 		myBinaryTree.add(56);
 		myBinaryTree.add(30);
@@ -16,13 +15,12 @@ public class MyBinaryTreeTest {
 		myBinaryTree.add(40);
 		myBinaryTree.add(22);
 		myBinaryTree.add(16);
-		myBinaryTree.add(70);
 		myBinaryTree.add(67);
 		myBinaryTree.add(63);
 		myBinaryTree.add(60);
 		myBinaryTree.add(65);
 		myBinaryTree.add(95);
-		int size = myBinaryTree.getSize();
-		Assert.assertEquals(13, size);
+		boolean  matchKey = myBinaryTree.search(63);
+		Assert.assertTrue(matchKey);
 	}
 }
